@@ -8,10 +8,23 @@ const options = {
 };
 
 const getweather =(city)=>{
-    
+   
 fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city='+city, options)
     .then(response => response.json())
     .then(response => {
+        cityName.innerHTML = city
+        Cloud_pct.innerHTML = response.cloud_pct
+        temp.innerHTML = response.temp
+        temp2.innerHTML = response.temp
+        Humidity.innerHTML = response.humidity
+        Humidity2.innerHTML = response.humidity
+        min_temp.innerHTML = response.min_temp
+        max_temp.innerHTML = response.max_temp
+        Wind_speed.innerHTML = response.wind_degrees
+        Wind_speed2.innerHTML = response.wind_degrees
+        Wind_degrees.innerHTML = response.wind_degrees
+        Sunrise.innerHTML = response.sunrise
+        Sunset.innerHTML = response.sunset
         if(city=="delhi"){
             cityName.innerHTML = city
             Cloud_pct.innerHTML = response.cloud_pct
@@ -27,6 +40,7 @@ fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city='+city, opti
             Sunrise.innerHTML = response.sunrise
             Sunset.innerHTML = response.sunset
         }
+      
         else if(city=="pune")
         {
         Cloud_pctpune.innerHTML = response.cloud_pct
@@ -51,17 +65,17 @@ fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city='+city, opti
         Sunrisemumbai.innerHTML = response.sunrise
         Sunsetmumbai.innerHTML = response.sunset
         }
-        else if(city=="kolkota")
+        else if(city=="hyderabad")
         {
-        Cloud_pctkolkota.innerHTML = response.cloud_pct
-        tempkolkota.innerHTML = response.temp
-        Humiditykolkota.innerHTML = response.humidity
-        min_tempkolkota.innerHTML = response.min_temp
-        max_tempkolkota.innerHTML = response.max_temp
-        Wind_speedkolkota.innerHTML = response.wind_degrees
-        Wind_degreeskolkota.innerHTML = response.wind_degrees
-        Sunrisekolkota.innerHTML = response.sunrise
-        Sunsetkolkota.innerHTML = response.sunset
+        Cloud_pcthyderbad.innerHTML = response.cloud_pct
+        temphyderbad.innerHTML = response.temp
+        Humidityhyderbad.innerHTML = response.humidity
+        min_temphyderbad.innerHTML = response.min_temp
+        max_temphyderbad.innerHTML = response.max_temp
+        Wind_speedhyderbad.innerHTML = response.wind_degrees
+        Wind_degreeshyderbad.innerHTML = response.wind_degrees
+        Sunrisehyderbad.innerHTML = response.sunrise
+        Sunsethyderbad.innerHTML = response.sunset
         }
         else if(city=="chennai")
         {
@@ -75,17 +89,17 @@ fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city='+city, opti
         Sunrisechennai.innerHTML = response.sunrise
         Sunsetchennai.innerHTML = response.sunset
         }
-        else if(city=="botsan")
+        else if(city=="jalandhar")
         {
-        Cloud_pctbotsan.innerHTML = response.cloud_pct
-        tempbotsan.innerHTML = response.temp
-        Humiditybotsan.innerHTML = response.humidity
-        min_tempbotsan.innerHTML = response.min_temp
-        max_tempbotsan.innerHTML = response.max_temp
-        Wind_speedbotsan.innerHTML = response.wind_degrees
-        Wind_degreesbotsan.innerHTML = response.wind_degrees
-        Sunrisebotsan.innerHTML = response.sunrise
-        Sunsetbotsan.innerHTML = response.sunset
+        Cloud_pctjalandhar.innerHTML = response.cloud_pct
+        tempjalandhar.innerHTML = response.temp
+        Humidityjalandhar.innerHTML = response.humidity
+        min_tempjalandhar.innerHTML = response.min_temp
+        max_tempjalandhar.innerHTML = response.max_temp
+        Wind_speedjalandhar.innerHTML = response.wind_degrees
+        Wind_degreesjalandhar.innerHTML = response.wind_degrees
+        Sunrisejalandhar.innerHTML = response.sunrise
+        Sunsetjalandhar.innerHTML = response.sunset
         }
         else if(city=="lucknow")
         {
@@ -106,12 +120,13 @@ fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city='+city, opti
 
 submit.addEventListener("click",(e)=>{
     e.preventDefault();
-    getweather(city.value);
+    getweather(city.value);  
+    
 })
 getweather("delhi")
 getweather("pune")
 getweather("mumbai")
-getweather("kolkota")
+getweather("hyderabad")
 getweather("chennai")
-getweather("botsan")
+getweather("jalandhar")
 getweather("lucknow")
