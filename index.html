@@ -7,106 +7,143 @@
     <title>My Wheather App</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-     
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary bg-grey-black "  >
+        <div class="container-fluid custom-container ">
             <a class="navbar-brand" href="#">weather App</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent ">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About this App</a>
+                        <a class="nav-link" href="#">About this Website</a>
                     </li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
 
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Delhi</a></li>
-                            <li><a class="dropdown-item" href="#">hyderabad</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">banglore</a></li>
+                            <li><a class="dropdown-item">
+                                    A weather app website that works with an API is a user-friendly platform that<br/>
+                                    provides real-time weather information to its users.<br />
+                                    By utilizing an Application Programming Interface (API), the website can fetch<br/>
+                                    weather data from an external source and display it in a user-friendly format.<br/>
+                                    Upon visiting the website, users are greeted with a clean and intuitive interface<br/>
+                                    that typically includes a search bar where they can entera location to get<br/>
+                                    weather information. The website then sends a request to the weather API, which<br/>
+                                    processes the query and returns relevant data such as temperature, humidity, wind<br/>
+                                    speed, and weather conditions for the specified location.<br/>
+
+                                    Weather app websites often leverage modern web development technologies, including<br/>
+                                    HTML, CSS, JavaScript, to dynamically update the displayed information<br/>
+                                    without requiring page reloads. This ensures a seamless and responsive user<br/>
+                                    experience.<br/>
+
+                                    The reliance on an external weather API allows the website to stay up-to-date with<br/>
+                                    the latest weather data without the need for maintaining a large database of weather<br/>
+                                    information. This makes it easy for the website owner to focus on user<br/>
+                                    interface improvements and functionality while leaving the weather data management<br/>
+                                    to the API provider.<br/>
+
+                                    Overall, a weather app website powered by an API delivers accurate and timely<br/>
+                                    weather information, enabling users to plan their day and stay informed about the<br/>
+                                    current weather conditions at their desired locations with ease.
+
+
+                                </a></li>
+
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link ">Usage Guide</a>
+                    <li class="nav-item"href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" title="How to use the Website : Enter your city name in the search bar, and click on search to get the weather details of your entered city in detail.">
+                        <a class="nav-link ">Usage Guide</a> 
+                                                                                                                                                                                                               
+
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
-                    <input id="city" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
+                    <input id="city"  class="form-control me-2" type="search" placeholder="Enter Your City Name"
+                        aria-label="Search">
+                    <button class="btn btn-outline-success"style="border-color: white;" type="submit" id="submit">Search</button>
                 </form>
             </div>
         </div>
     </nav>
-
+    <div class="toggle-container">
+        <label class="switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="slider round"></span>
+        </label>
+        <span id="toggle-text"></span>
+    </div>
 
     <div class="container">
-        <h1 class="my-4 text-center ">Weather for <span id="cityName"></span></h1>
+        <h1 class="my-4 text-center " style="font-family: 'Times New Roman', Times, serif;" >Weather for <span id="cityName"></span></h1>
         <main>
             <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
                 <div class="col">
-                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
-                        <div class="card-header py-3  border-primary">
+                    <div class="card mb-4 rounded-3 shadow-sm border-color">
+                        <div class="card-header py-3 text-bg border-color">
                             <h4 class="my-0 fw-normal">Temperatures</h4>
                         </div>
                         <div class="card-body">
                             <h1 class="card-title pricing-card-title"><span id="temp2"></span><small
                                     class="text-body-secondary fw-light">/c</small></h1>
                             <ul class="list-unstyled mt-3 mb-4">
-                                <li>Temperature is <span id="temp"></span></li>
-                                <li>Min Temperature is <span id="min_temp"></span></li>
-                                <li>Max Temperature is <span id="max_temp" ></span></li>                               
+                                <li>Temperature is <span id="temp"></span> /c</li>
+                                <li>Min Temperature is <span id="min_temp"></span> /c</li>
+                                <li>Max Temperature is <span id="max_temp"></span> /c</li>
+                                <li>&nbsp</li>
                             </ul>
-                           
+
                         </div>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
-                        <div class="card-header py-3 border-primary">
+                    <div class="card mb-4 rounded-3 shadow-sm border-color">
+                        <div class="card-header py-3 text-bg border-color">
                             <h4 class="my-0 fw-normal">Humidity details</h4>
                         </div>
                         <div class="card-body">
                             <h1 class="card-title pricing-card-title"><span id="Humidity2"></span><small
                                     class="text-body-secondary fw-light">%</small></h1>
                             <ul class="list-unstyled mt-3 mb-4">
-                                
-                                <li>Humidity is <span id="Humidity"></span></li>
-                                <li>Cloud_pct is <span id="Cloud_pct"></span></li>
+
+                                <li>Humidity is <span id="Humidity"></span> %</li>
+                                <li>Cloud_pct is <span id="Cloud_pct"></span> %</li>
+                                <li>&nbsp</li>
+                                <li>&nbsp</li>
                             </ul>
-                            
+
                         </div>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
-                        <div class="card-header py-3 border-primary ">
-                            <h4 class="my-0 fw-normal ">wind info</h4>
+                    <div class="card mb-4 rounded-3 shadow-sm border-color ">
+                        <div class="card-header py-3 text-bg border-color ">
+                            <h4 class="my-0 fw-normal ">wind information</h4>
                         </div>
                         <div class="card-body">
                             <h1 class="card-title pricing-card-title"><span id="Wind_speed2"></span><small
                                     class="text-body-secondary fw-light">km/h</small></h1>
                             <ul class="list-unstyled mt-3 mb-4">
-                                <li>Wind speed is <span id="Wind_speed"></span></li>
-                                <li>Wind degrees is <span id="Wind_degrees"></span></li>
+                                <li>Wind speed is <span id="Wind_speed"></span> km/h</li>
+                                <li>Wind degrees is <span id="Wind_degrees"></span> km/h</li>
                                 <li>Sunrise Time is <span id="Sunrise"></span></li>
                                 <li>Sunset Time is <span id="Sunset"></span></li>
                             </ul>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -120,7 +157,7 @@
                         <tr>
                             <th style="width: 34%;"></th>
                             <th style="width: 22%;">Cloud_pct</th>
-                   <!--     <th style="width: 22%;">Feels_like</th> -->
+                            <!--     <th style="width: 22%;">Feels_like</th> -->
                             <th style="width: 22%;">Humidity</th>
                             <th style="width: 22%;">Max_temp</th>
                             <th style="width: 22%;">Min_temp</th>
@@ -136,7 +173,7 @@
                             <th scope="row" class="text-start">pune</th>
 
                             <td><span id="Cloud_pctpune"></span></td>
-                         <!--    <td>4</td> -->
+                            <!--    <td>4</td> -->
                             <td><span id="Humiditypune"></span></td>
                             <td><span id="max_temppune"></span></td>
                             <td><span id="min_temppune"></span></td>
@@ -151,7 +188,7 @@
                         <tr>
                             <th scope="row" class="text-start">mumbai</th>
                             <td><span id="Cloud_pctmumbai"></span></td>
-                        <!--     <td>4</td> -->
+                            <!--     <td>4</td> -->
                             <td><span id="Humiditymumbai"></span></td>
                             <td><span id="max_tempmumbai"></span></td>
                             <td><span id="min_tempmumbai"></span></td>
@@ -168,7 +205,7 @@
                         <tr>
                             <th scope="row" class="text-start">hyderbad</th>
                             <td><span id="Cloud_pcthyderbad"></span></td>
-                        <!--     <td>4</td> -->
+                            <!--     <td>4</td> -->
                             <td><span id="Humidityhyderbad"></span></td>
                             <td><span id="max_temphyderbad"></span></td>
                             <td><span id="min_temphyderbad"></span></td>
@@ -182,7 +219,7 @@
                         <tr>
                             <th scope="row" class="text-start">chennai</th>
                             <td><span id="Cloud_pctchennai"></span></td>
-                        <!--     <td>4</td>  -->
+                            <!--     <td>4</td>  -->
                             <td><span id="Humiditychennai"></span></td>
                             <td><span id="max_tempchennai"></span></td>
                             <td><span id="min_tempchennai"></span></td>
@@ -196,7 +233,7 @@
                         <tr>
                             <th scope="row" class="text-start">jalandhar</th>
                             <td><span id="Cloud_pctjalandhar"></span></td>
-                        <!--     <td>4</td>  -->
+                            <!--     <td>4</td>  -->
                             <td><span id="Humidityjalandhar"></span></td>
                             <td><span id="max_tempjalandhar"></span></td>
                             <td><span id="min_tempjalandhar"></span></td>
@@ -210,7 +247,7 @@
                         <tr>
                             <th scope="row" class="text-start">lucknow</th>
                             <td><span id="Cloud_pctlucknow"></span></td>
-                        <!--     <td>4</td> -->
+                            <!--     <td>4</td> -->
                             <td><span id="Humiditylucknow"></span></td>
                             <td><span id="max_templucknow"></span></td>
                             <td><span id="min_templucknow"></span></td>
@@ -227,6 +264,8 @@
         </main>
     </div>
 
+
+    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"

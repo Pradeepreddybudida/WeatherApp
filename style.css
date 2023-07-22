@@ -1,0 +1,109 @@
+/* Styles for the toggle button */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  margin-right: 35px;
+  margin-top: 20px;
+}
+
+.bg-grey-black{
+  background-color: #444;
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #121111;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: rgb(139, 136, 136);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #e8e7e7;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+/* Add your existing styles here */
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Add any other styles you want to change for dark mode here */
+
+.custom-container {
+  background-color: #cdcdcd; /* Replace with your desired background color */
+  border-radius: 10px; /* Add rounded corners (adjust the value as needed) */
+  padding: 20px; /* Add some padding to give it some space */
+  box-shadow: 0 4px 6px rgba(151, 28, 28, 0.1); /* Add a subtle box shadow */
+}
+
+.container-fluid.custom-container {
+margin: 0 auto;
+max-width: 1150px; /* Adjust the maximum width as needed */
+}
+
+.text-bg {
+  background-color:#cdcdcd;/* Your primary color code here */;
+  /* Your text color here, to ensure readability */;
+  /* Add any other styles you want for the text with the primary background */
+}
+
+.btn-outline-success{
+  color: #333;
+  border-radius: 10px;
+  background-color: #f7f1f1;
+  transition: background-color 0.2s;
+}
+.btn-outline-success:hover{
+  background-color: black;
+
+}
+
